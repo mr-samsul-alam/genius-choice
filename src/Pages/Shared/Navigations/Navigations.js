@@ -57,14 +57,15 @@ const Navigations = () => {
     }
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static">
-                <Container maxWidth="xl">
-                    <Toolbar disableGutters>
+            <AppBar position="static" style={{ backgroundColor: "#1BBF72" }} >
+                <Container maxWidth="xl" >
+                    <Toolbar disableGutters >
                         <Typography
                             variant="h6"
                             noWrap
                             component="div"
-                            sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
+                            sx={{ mr: 2,  fontSize:"1.5rem", display: { xs: 'none', md: 'flex' } }}
+
                         >
                             Genius Choice
                         </Typography>
