@@ -5,10 +5,10 @@ import React from 'react';
 const UpcomingEvent = () => {
     return (
         <div>
-            <Container spacing={1}>
+            <Container spacing={1} style={{ padding: "30px" }}>
                 <h1>Our Upcoming Event</h1>
                 <Grid container spacing={1}>
-                    <Grid item  xs={12} md={4}>
+                    <Grid item xs={12} md={4}>
                         <div>
                             <Card  >
                                 <Typography sx={{ fontSize: 24 }} style={{ padding: "20px" }}>

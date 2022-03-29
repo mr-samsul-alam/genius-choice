@@ -6,21 +6,27 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Grid } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const PopularCoursesCard = (props) => {
-    const { name, picture, price, intructor_name, about, duration } = props.courses
-    console.log(name);
+    const { name, picture, index, about } = props.courses
+    const navigate = useNavigate();
+
+    const handleCardDetails = (index) => {
+        console.log("clicked");
+        navigate(`/singleCoursesDetails/${index}`)
+    }
     return (
-        <Grid item xs={12} md={3}>
-            <Card sx={{ maxWidth: 345 }}>
+        <Grid item xs={12} md={3} style={{ paddingTop: "30px" }}>
+            <Card sx={{ maxWidth: "450px", height: "550px" }}>
                 <CardMedia
                     component="img"
                     alt="green iguana"
                     height="140"
-                    image="/static/images/cards/contemplative-reptile.jpg"
+                    image={picture}
                 />
                 <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
+                    <Typography gutterBottom variant="h5" component="div" sx={{ color: "#1BBF72" }}>
                         {name}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
@@ -28,8 +34,11 @@ const PopularCoursesCard = (props) => {
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Button size="small">Share</Button>
-                    <Button size="small">Learn More</Button>
+
+                    <Button
+                        onClick={() => handleCardDetails(index)}
+                        style={{ margin: "auto" }}
+                        size="small">Learn More</Button>
                 </CardActions>
             </Card>
         </Grid>
